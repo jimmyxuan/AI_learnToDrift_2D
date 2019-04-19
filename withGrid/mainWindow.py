@@ -29,17 +29,21 @@ class MyWindow(pyglet.window.Window):
 
     def on_key_press(self, symbol,modifiers):
         if symbol == key.UP:
-            print('accelerate')
-            self.car.goStraight()
+            #print('accelerate')
+            print(self.car.goStraight())
+            self.car.checkPoint()
         elif symbol == key.DOWN:
-            print('reverse')
-            self.car.goReverse()
+            #print('reverse')
+            print(self.car.goReverse())
+            self.car.checkPoint()
         elif symbol == key.LEFT:
-            print('turn left')
-            self.car.turnLeft()
+            #print('turn left')
+            print(self.car.turnLeft())
+            self.car.checkPoint()
         elif symbol == key.RIGHT:
-            print('turn right')
-            self.car.turnRight()
+            #print('turn right')
+            print(self.car.turnRight())
+            self.car.checkPoint()
         elif symbol == key.ESCAPE:
             pyglet.app.exit()
 
