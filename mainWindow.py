@@ -43,6 +43,7 @@ class MyWindow(pyglet.window.Window):
         if self.key_handler[key.DOWN]:
             self.car.goReverse(dt)
         self.car.runningCar(dt)
+        self.car.reset()
 
 if __name__ == "__main__":
     window = MyWindow(WINDOWWIDTH,WINDOWHEIGHT, "DRIFT AI", resizable=True, vsync =True)
