@@ -20,13 +20,20 @@ class MyWindow(pyglet.window.Window):
         self.testTrack= Track([40,60,1200,600],[240,260,800,200])
         self.testGrid = Grid(40,60,1200,600,50)
 
-    def on_draw(self):
-        #self.clear()
-        glClear(GL_COLOR_BUFFER_BIT)
-        self.fps_display.draw()
-        #self.testGrid.draw()
-        self.testTrack.draw()
-        self.car.draw()
+    def update(self, dt):
+        if self.key_handler[key.LEFT]:
+            self.car.turnLeft(dt)
+        
+        if self.key_handler[key.RIGHT]:
+            self.car.turnRight(dt)
+
+        if self.key_handler[key.UP]:
+            self.car.goStraight(dt)
+
+        if self.key_handler[key.DOWN]:
+            self.car.goReverse(dt)
+        self.car.runningCar(dt)
+        self.car.reset()
         
 
 
