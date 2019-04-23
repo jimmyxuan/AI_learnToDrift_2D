@@ -93,3 +93,12 @@ class CarSprite():
         self.updateY(self.getDeltaY())
         self.updateDeltaX(self.getDeltaX() * 0.10)
         self.updateDeltaY(self.getDeltaY() * 0.10)
+        
+    def reset(self):
+        if(self.carVision.isBothTrackCollision()):
+            self.carSprite.x = 100
+            self.carSprite.y = 100
+            self.carSprite.rotation = 0
+            self.deltaX = 0.0
+            self.deltaY = 0.0
+            self.draw()
